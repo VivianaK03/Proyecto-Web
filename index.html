@@ -3,7 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Pinturillo</title>
+    <!DOCTYPE html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice - Pinturillo 2</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <div class="auth">
+            <a href="#">Iniciar sesión</a> / <a href="#">Registrarse</a>
+            <select name="idioma">
+                <option value="es">Español</option>
+                <option value="en">Inglés</option>
+            </select>
+        </div>
+    </header>
+    <main>
+        <section class="banner">
+            <img src="logotop.png" alt="Banner">
+        </section>
+        <section class="secciones">
+            <div class="seccion como-jugar">
+                <h2>¿Cómo jugar?</h2>
+                <p> El objetivo es adivinar las palabras representadas a través de dibujos para así acumular puntos.</p>
+            </div>
+            <div class="seccion salas">
+                <h2>Salas disponibles</h2>
+                <ul>
+                    <li>
+                        <a href="#">Sala 1: Paisajes</a> (4 jugadores) - Activa
+                    </li>
+                    <li>
+                        <a href="#">Sala 2: Animales</a> (2 jugadores) - En espera
+                    </li>
+                    <li>
+                        <a href="#">Sala 3: Personajes famosos</a> (6 jugadores) - Completa
+                    </li>
+                </ul>
+                <a href="#">Ver todas las salas</a>
+            </div>
+            <div class="seccion crear-sala">
+                <h2>Crear sala</h2>
+                <form action="#">
+                    <label for="tema">Tema:</label>
+                    <input type="text" id="tema" name="tema">
+                    <label for="jugadores">Jugadores:</label>
+                    <select name="jugadores">
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <label for="tiempo">Tiempo:</label>
+                    <select name="tiempo">
+                        <option value="60">60 segundos</option>
+                        <option value="90">90 segundos</option>
+                        <option value="120">120 segundos</option>
+                    </select>
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena">
+                    <button type="submit">Crear sala</button>
+                </form>
+            </div>
+        </section>
+        
 </head>
 <body>
     <p></p>
