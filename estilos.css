@@ -5,6 +5,8 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    background-image: url(https://img.freepik.com/foto-gratis/cubos-blancos-fondo-3d_23-2150505295.jpg?w=826&t=st=1710605197~exp=1710605797~hmac=63aa90483734ec3b681da69f3fa7fb2c1e901ebb8546d5494935ddb261a9db6a);
+    background-repeat: repeat;
 }
 
 h1, h2, h3 {
@@ -25,6 +27,7 @@ a:hover {
 header {
     background-color: #f7f7f7;
     padding: 10px 20px;
+    border-radius: 4px;
 }
 
 .logo {
@@ -37,6 +40,9 @@ header {
 
 .auth {
     float: right;
+    background-color: #f8f9fa;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .auth a {
@@ -44,92 +50,91 @@ header {
 }
 
 .auth select {
-    margin-left: 10px;
-    padding: 5px;
+    text-decoration: none;
+    color: #333;
+    margin-right: 10px;
+    border-radius: 4px;
 }
 
 /* Banner */
 
 .banner {
-    height: 200px;
-    overflow: hidden;
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+    
+    overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde del contenedor */
+    display: flex; /* Asegura que la imagen se muestre como un bloque para evitar márgenes extra */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+    
+    
 }
 
-.banner img {
-    width: 80%;
-    height: 90%;
-    object-fit: cover;
+.banner-img {
+    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción de la imagen */
+
 }
+
 
 /* Secciones */
 
 .secciones {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.secciones-contenedor {
+    display: flex;
+    justify-content: space-between;
+    width: 80%; /* Ancho del contenedor */
 }
 
 .seccion {
-    margin-bottom: 20px;
+    background-color: #f0f0f0; /* Color de fondo */
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
+    width: calc(50% - 20px); /* Ajusta el ancho para que ocupen la mitad del contenedor */
+    margin-bottom: 20px;
 }
 
-.seccion.como-jugar {
-    background-color: #f7f7f7;
+.crear-sala {
+    background-color: #ffcccc; /* Color de fondo para la sección "Crear sala" */
 }
 
-.seccion.salas {
-    background-color: #fff;
+.salas {
+    background-color: #ccffcc; /* Color de fondo para la sección "Seleccionar sala" */
 }
 
-.seccion.salas ul {
-    list-style: none;
-    padding: 0;
+/* Estilos para los elementos internos, como los títulos */
+h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
-.seccion.salas ul li {
-    padding: 5px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.seccion.salas ul li a {
-    color: #333;
-}
-
-.seccion.salas ul li a:hover {
-    color: #0073b7;
-}
-
-.seccion.crear-sala {
-    background-color: #f7f7f7;
-}
-
-.seccion.crear-sala form {
-    padding: 10px;
-}
-
-.seccion.crear-sala label {
+label {
     display: block;
     margin-bottom: 5px;
 }
 
-.seccion.crear-sala input,
-.seccion.crear-sala select {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+input,
+select,
+button {
+    margin-bottom: 10px;
 }
 
-.seccion.crear-sala button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #0073b7;
-    color: #fff;
-    border: 1px solid #00578b;
-    border-radius: 5px;
-    cursor: pointer;
+button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #4CAF50; /* Color de fondo para el botón */
+    color: white;
+    border-radius: 4px;
 }
+
+button:hover {
+    background-color: #45a049; /* Cambio de color al pasar el ratón sobre el botón */
+}
+
 
 /* Tienda */
 
@@ -184,8 +189,19 @@ header {
 /* link-canvas*/
 
 .link-canvas {
-    display: flex;
-    justify-content: center;
-    background-color: #f7f7f7;
-    padding: 20px;
+    text-align: center;
+}
+
+.btn-dibujar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    text-decoration: none; /* Quita la subrayado del enlace */
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+.btn-dibujar:hover {
+    background-color: #2980b9; /* Cambia el color de fondo al pasar el ratón */
 }
