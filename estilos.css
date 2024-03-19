@@ -180,3 +180,12 @@ header {
     border: 1px solid #ddd;
     border-radius: 5px;
 }
+
+/* link-canvas*/
+
+.link-canvas {
+    display: flex;
+    justify-content: center;
+    background-color: #f7f7f7;
+    padding: 20px;
+}
