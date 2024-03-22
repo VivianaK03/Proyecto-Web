@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proyecto canvas</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <main class="main-container">
-      <canvas id="main-canvas" width="900" height="900"></canvas>
-      <div id="chat-container">
-        <h2>Chat Jugadores</h2>
-        <div id="chat-messages">
-          <div class="message">Mensaje 1</div>
-          <div class="message">Mensaje 2</div>
-          <div class="message">Mensaje 3</div>
-          <div class="message">Mensaje 4</div>
-          <div class="message">Mensaje 5</div>
-          <div class="message">Mensaje 6</div>
-          <div class="message">Mensaje 7</div>
-          <!-- Los mensajes se añadirán dinámicamente aquí -->
-        </div>
-        <input type="text" id="message-input" placeholder="">
-        <button id="send-button">Enviar</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyecto canvas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="main-container">
+    <div id="player-container">
+      <h2>Tabla de Jugadores</h2>
+      <div class="player-box">Jugador 1</div>
+      <div class="player-box">Jugador 2</div>
+      <div class="player-box">Jugador 3</div>
+      <div class="player-box">Jugador 4</div>
+    </div>
+    <canvas id="main-canvas" width="900" height="900"></canvas>
+    <div id="chat-container">
+      <h2>Chat Jugadores</h2>
+      <div id="chat-messages">
+        <div class="message">Mensaje 1</div>
+        <div class="message">Mensaje 2</div>
+        <div class="message">Mensaje 3</div>
+        <div class="message">Mensaje 4</div>
+        <div class="message">Mensaje 5</div>
+        <div class="message">Mensaje 6</div>
+        <div class="message">Mensaje 7</div>
+        <!-- Los mensajes se añadirán dinámicamente aquí -->
       </div>
-    </main>
-    <script src="canvas.js"></script>
-  </body>
+      <input type="text" id="message-input" placeholder="">
+      <button id="send-button">Enviar</button>
+    </div>
+  </main>
+  <script src="canvas.js"></script>
+</body>
 </html>

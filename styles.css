@@ -4,26 +4,35 @@ body {
 }
 
 .main-container {
-  background-color: rgb(113, 128, 212);
+  background-color: rgb(227, 148, 215);
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  justify-content: space-between; /* Alinear elementos en los extremos */
+  padding: 40px; /* Agregar espacio alrededor de los elementos */
 }
 
 canvas {
   background-color: #fff;
 }
 
+#player-container {
+  background-color: #f0f0f0;
+  padding: 20px;
+  width: 200px; /* Ancho fijo para el contenedor de jugadores */
+}
+
+.player-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
 #chat-container {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
   padding: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  flex: 1; /* Permitir que el contenedor de chat ocupe el espacio restante */
 }
 
 #chat-messages {
@@ -44,13 +53,13 @@ canvas {
 }
 
 #send-button {
-  width: 60px;
-  padding: 5px;
+  width: 80px;
+  padding: 10px;
   margin-top: 5px;
   background-color: #4CAF50;
   color: white;
   border: none;
-  border-radius: 3px;
+  border-radius: px;
   cursor: pointer;
 }
 
