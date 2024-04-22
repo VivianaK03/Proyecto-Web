@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background-image: url(https://img.freepik.com/foto-gratis/cubos-blancos-fondo-3d_23-2150505295.jpg?w=826&t=st=1710605197~exp=1710605797~hmac=63aa90483734ec3b681da69f3fa7fb2c1e901ebb8546d5494935ddb261a9db6a);
+    background-image: url(fondo.jpg);
     background-repeat: repeat;
 }
 
@@ -205,3 +205,90 @@ button:hover {
 .btn-dibujar:hover {
     background-color: #2980b9; /* Cambia el color de fondo al pasar el ratón */
 }
+
+/* Secciones */
+.seccion {
+    background-color: #f0f0f0; /* Color de fondo */
+    padding: 20px;
+    border-radius: 10px;
+    width: calc(50% - 20px); /* Ajusta el ancho para que ocupen la mitad del contenedor */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease; /* Transición suave al cambiar el tamaño */
+}
+
+.seccion:hover {
+    transform: scale(1.05); /* Hace que el cuadro se agrande un poco al pasar el mouse sobre él */
+}
+
+/* Estilos para las secciones */
+.seccion {
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilos para la sección "¿Cómo jugar?" */
+.como-jugar {
+    background-color: #ffcc00; /* Amarillo */
+    width: calc(50% - 30px); /* Ajusta el ancho para que ocupe todo el contenedor */
+}
+
+.como-jugar h2 {
+    margin-top: 0;
+    color: #333; /* Color del texto */
+}
+
+.como-jugar p {
+    color: #666; /* Color del texto */
+}
+
+/* Estilos para la sección "Salas Disponibles" */
+.salas-disponibles {
+    background-color: #66cc99; /* Verde */
+    width: calc(50% - 30px); /* Ajusta el ancho para que ocupe la mitad del contenedor */
+}
+
+.salas-disponibles h2 {
+    margin-top: 0;
+    color: #fff; /* Color del texto */
+}
+
+.salas-disponibles p {
+    color: #eee; /* Color del texto */
+}
+
+/* Estilos para la sección "Crear Sala" */
+.crear-sala {
+    background-color: #ff6666; /* Rojo */
+    width: calc(50% - 30px); /* Ajusta el ancho para que ocupe la mitad del contenedor */
+}
+
+.crear-sala h2 {
+    margin-top: 0;
+    color: #fff; /* Color del texto */
+}
+
+.crear-sala p {
+    color: #eee; /* Color del texto */
+}
+
+/* Estilos para el botón "Ir a dibujar" */
+.btn-ir-a-dibujar {
+    display: block;
+    width: calc(50% - 10px); /* Ajusta el ancho para que ocupe todo el contenedor con margen */
+    margin: 0 auto; /* Centra el botón horizontalmente */
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #00578b; /* Azul oscuro */
+    color: #fff; /* Color del texto */
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+.btn-ir-a-dibujar:hover {
+    background-color: #004168; /* Cambia el color de fondo al pasar el ratón */
+}
+
+
