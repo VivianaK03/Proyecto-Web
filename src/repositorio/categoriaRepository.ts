@@ -15,11 +15,11 @@ export class CategoriaRepository {
     async findById(id: number) {
         return this.repository.findOne({ where: { id } });
     }
-    
+
     async save(categoria: Categoria){
         return this.repository.save(categoria);
     }
-   
+
     async delete(id: number){
         return this.repository.delete(id);
     }

@@ -10,23 +10,23 @@ Router.get(
 );
 
 Router.get(
-  "/categoria/:id",
-  categoriaController.getById
+    "/categoria/:id",
+    categoriaController.getById
 );
 
 Router.post(
-  "/guardarCategoria",
-  categoriaController.save
+    "/guardarCategoria",
+    categoriaController.save
 );
 
 Router.put(
-  "/editarCategoria",
-  categoriaController.update
+    "/editarCategoria",
+    categoriaController.update
 );
 
 Router.delete(
-  "/eliminarCategoria/:id",
-  categoriaController.delete
+    "/eliminarCategoria/:id",
+    categoriaController.delete
 );
 
 export { Router as categoriaRouter };
