@@ -20,7 +20,7 @@ Router.post(
 );
 
 Router.put(
-    "/editarCategoria",
+    "/editarCategoria/:id",
     categoriaController.update
 );
 

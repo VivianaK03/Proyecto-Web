@@ -27,7 +27,7 @@ Router.get(
   );
 
   Router.put(
-    "/EditarPalabra",
+    "/EditarPalabra/:id",
     palabraController.update
   )
 
