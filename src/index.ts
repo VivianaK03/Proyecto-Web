@@ -9,6 +9,7 @@ import { palabraRouter } from "./rutas/palabraRoutes";
 import * as swaggerUi from 'swagger-ui-express';
 import * as swaggerSpec from './swagger'
 import { categoriaRouter } from "./rutas/categoriaRoutes"; // Importa las rutas de categorías
+import { salaJuegoRouter } from "./rutas/salaJuegoRoutes"; // Importa las rutas de categorías
 const cors = require('cors');
 const app = express();
 
@@ -21,10 +22,12 @@ const { PORT = 3000 } = process.env;
 
 app.use("/api", palabraRouter);
 app.use("/api", categoriaRouter);
+app.use("/api", salaJuegoRouter);
 console.log(swaggerSpec);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use("/api/palabras", palabraRouter); // Rutas de palabras
 app.use("/api/categorias", categoriaRouter); // Rutas de categorías
+app.use("/api/salaJuego", salaJuegoRouter); 
 
 
 AppDataSource.initialize()
