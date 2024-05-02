@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { SalaJuegoResponse } from "../dto/salaJuegoDto";
-import { SalaJuegoRepository } from "../repositorio/SalaJuegoRepository";
+import { SalaJuegoRepository } from "../repositorio/salaJuegoRepository";
 import { SalaJuego } from "../entity/salaJuegoEntity";
 
 
