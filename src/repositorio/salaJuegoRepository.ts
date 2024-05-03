@@ -4,9 +4,6 @@ import { AppDataSource } from "../data-source";
 export class SalaJuegoRepository {
     private repository = AppDataSource.getRepository(SalaJuego);
 
-    async findAll() {
-        return this.repository.find();
-    }
 
     async findById(id: number) {
         return this.repository.findOne({ where: { id } });
@@ -19,4 +16,8 @@ export class SalaJuegoRepository {
     async delete(id: number) {
         return this.repository.delete(id);
     }
+    async findAll() {
+        return this.repository.find({ relations: ["categoria"] });
+    }
+    
 }

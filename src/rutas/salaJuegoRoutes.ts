@@ -1,5 +1,5 @@
 import * as express from "express";
-import { SalaJuegoController } from "../controlador/SalaJuegoController";
+import { SalaJuegoController } from "../controlador/salaJuegoController";
 
 const Router = express.Router();
 const salaJuegoController = new SalaJuegoController();

@@ -1,16 +1,17 @@
-import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from "typeorm";
+import { Entity, Column, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Categoria } from "./categoriaEntity";
 
-@Entity({ name: "saladejuego" })
-export class SalaJuego extends BaseEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
+@Entity()
+export class SalaJuego {
+    @PrimaryGeneratedColumn()
+    id: number;
 
-  @Column({ nullable: false })
-  nombre: string;
+    @Column()
+    nombre: string;
 
-  @Column({ nullable: false })
-  estado: string;
+    @Column()
+    estado: string;
 
-  @Column({ nullable: false })
-  cate_id: string;
+    @ManyToOne(() => Categoria, categoria => categoria.salasJuego)
+    categoria: Categoria;
 }

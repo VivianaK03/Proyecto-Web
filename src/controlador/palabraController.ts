@@ -11,7 +11,7 @@ export class PalabraController {
         try {
             const palabra: Palabra = await this.palabraRepository.findById(Number(id));
             if (palabra === null) {
-                res.status(404).json({ error: 'This word doesn\'t exist' });
+                res.status(404).json({ error: 'Esta palabra no existe' });
             }
             res.status(200).json({ palabra });
         } catch (error) {

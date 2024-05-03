@@ -1,1 +1,1 @@
-import {SalaJuegoRepository } from "../repositorio/SalaJuegoRepository";
+import {SalaJuegoRepository } from "../repositorio/salaJuegoRepository";

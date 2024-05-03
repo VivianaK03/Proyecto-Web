@@ -28,6 +28,9 @@ export class SalaJuegoController {
             return res.status(400).json({ error: error.message });
         }
     };
+    
+    
+    
 
     public save = async (req: Request, res: Response) => {
         const body = req.body;
