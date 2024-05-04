@@ -29,10 +29,11 @@ Router.get(
   Router.put(
     "/EditarPalabra/:id",
     palabraController.update
-  )
+  );
 
   Router.delete(
     "/EliminarPalabra/:id",
     palabraController.delete
-  )
+  );
+  
   export { Router as palabraRouter };

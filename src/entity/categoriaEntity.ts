@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, OneToMany } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, OneToMany, ManyToMany, JoinTable  } from "typeorm";
 import { SalaJuego } from "./salaJuegoEntity";
+import { Palabra } from "./palabraEntity";
 
 @Entity({ name: "categoria" })
 export class Categoria extends BaseEntity {
@@ -12,4 +13,10 @@ export class Categoria extends BaseEntity {
   @OneToMany(() => SalaJuego, salaJuego => salaJuego.categoria)
 salasJuego: SalaJuego[];
 
+@ManyToMany(() => Palabra)
+  @JoinTable()
+  palabras: Palabra[];
+
+  @Column({ nullable: true }) // Permitir que la categoría sea nula
+  categoriaId: number; // Agregar la propiedad categoriaId
 }
