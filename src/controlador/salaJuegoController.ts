@@ -6,6 +6,8 @@ import { SalaJuego } from "../entity/salaJuegoEntity";
 
 export class SalaJuegoController {
     private salaJuegoRepository: SalaJuegoRepository = new SalaJuegoRepository();
+    private ronda: number = 0;
+    private maxRondas: number = 5; // Número máximo de rondas
 
     public getById = async (req: Request, res: Response) => {
         const { id } = req.params;
@@ -64,4 +66,21 @@ export class SalaJuegoController {
             return res.status(400).json({ error: error.message });
         }
     }
+
+    nuevaRonda = async (req: Request, res: Response) => {
+        this.ronda++;
+        res.send("Nueva ronda iniciada. Ronda actual: " + this.ronda);
+    }
+
+    finDeRonda = async (req: Request, res: Response) => {
+        this.ronda++;
+        if (this.ronda >= this.maxRondas) {
+            console.log("El juego ha finalizado después de", this.maxRondas, "rondas");
+            res.send("El juego ha finalizado después de " + this.maxRondas + " rondas");
+        } else {
+            res.send("Ronda " + this.ronda + " finalizada. Aún no se alcanza el máximo de rondas.");
+        }
+    }
 }
+
+export default SalaJuegoController;

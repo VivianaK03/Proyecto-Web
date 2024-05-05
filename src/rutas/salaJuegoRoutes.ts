@@ -12,5 +12,7 @@ Router.get(
     "/salaJuego/estado/:estado",
     salaJuegoController.getByEstado
 );
+Router.get('/nuevaRonda', salaJuegoController.nuevaRonda);
+Router.get('/finDeRonda', salaJuegoController.finDeRonda);
 
 export { Router as salaJuegoRouter };
