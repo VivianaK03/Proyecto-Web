@@ -14,6 +14,4 @@ export class SalaJuego {
 
     @ManyToOne(() => Categoria, categoria => categoria.salasJuego)
     categoria: Categoria;
-    @Column()
-    genre: string; // Asegúrate de tener esta propiedad definida
 }

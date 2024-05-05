@@ -20,10 +20,10 @@ export class SalaJuegoRepository {
     async findAll() {
         return this.repository.find({ relations: ["categoria"] });
     }
-    async getAll(genre?: string) {
+    async getAll(estado?: string) {
         const options: FindManyOptions<SalaJuego> = {};
-        if (genre) {
-            options.where = { genre };
+        if (estado) {
+            options.where = { estado };
         }
         return this.repository.find(options);
     }
