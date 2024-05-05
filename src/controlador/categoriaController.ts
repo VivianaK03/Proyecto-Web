@@ -42,6 +42,7 @@ export class CategoriaController {
         }
     }
     
+    
     public update = async (req: Request, res: Response) => {
         const body = req.body;
         try {
@@ -72,5 +73,15 @@ export class CategoriaController {
         } catch (error) {
             return res.status(400).json({ error: error.message });
         }
-    }
+    };
+    public getByName = async (req: Request, res: Response) => {
+        try {
+          const name = req.params.nombre; // Cambiar de req.params.name a req.params.nombre
+          const category = await this.categoriaRepository.findByNombre(name);
+          res.status(200).json({ category });
+        } catch (error) {
+          res.status(500).json({ error: error.message });
+        }
+    };
+    
 }

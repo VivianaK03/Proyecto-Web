@@ -7,9 +7,8 @@ export class CategoriaRepository {
     async findAll() {
         return this.repository.find();
     }
-
     async findByNombre(nombre: string) {
-        return this.repository.findOne({ where: { nombre } });
+        return this.repository.find({ where: { nombre } });
     }
 
     async findById(id: number) {

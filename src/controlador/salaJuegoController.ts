@@ -18,7 +18,16 @@ export class SalaJuegoController {
         } catch (error) {
             return res.status(400).json({ error: error.message });
         }
-    }
+    };
+    public getByEstado = async (req: Request, res: Response) => {
+        try {
+            const estado = req.params.estado; // Obtener el estado de los parámetros de la solicitud
+            const salasJuego = await this.salaJuegoRepository.findByEstado(estado);
+            res.status(200).json({ salasJuego });
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    };
 
     public getAll = async (req: Request, res: Response) => {
         try {

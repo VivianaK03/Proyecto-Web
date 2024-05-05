@@ -11,12 +11,10 @@ export class Categoria extends BaseEntity {
   nombre: string;
 
   @OneToMany(() => SalaJuego, salaJuego => salaJuego.categoria)
-salasJuego: SalaJuego[];
+  salasJuego: SalaJuego[];
 
-@ManyToMany(() => Palabra)
+  @ManyToMany(() => Palabra)
   @JoinTable()
   palabras: Palabra[];
 
-  @Column({ nullable: true }) // Permitir que la categoría sea nula
-  categoriaId: number; // Agregar la propiedad categoriaId
 }

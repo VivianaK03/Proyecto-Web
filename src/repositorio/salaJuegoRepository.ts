@@ -5,9 +5,11 @@ import { FindManyOptions } from "typeorm";
 export class SalaJuegoRepository {
     private repository = AppDataSource.getRepository(SalaJuego);
 
-
     async findById(id: number) {
         return this.repository.findOne({ where: { id } });
+    }
+    async findByEstado(estado: string) {
+        return this.repository.find({ where: { estado } });
     }
 
     async save(salaJuego: SalaJuego) {

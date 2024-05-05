@@ -28,5 +28,9 @@ Router.delete(
     "/eliminarCategoria/:id",
     categoriaController.delete
 );
+Router.get(
+    '/categoria/:nombre', 
+   categoriaController.getByName
+   );
 
 export { Router as categoriaRouter };

@@ -8,5 +8,9 @@ Router.get("/salasJuego", salaJuegoController.getAll);
 Router.get("/salaJuego/:id", salaJuegoController.getById);
 Router.post("/crearSalaJuego", salaJuegoController.save);
 Router.delete("/eliminarSalaJuego/:id", salaJuegoController.delete);
+Router.get(
+    "/salaJuego/estado/:estado",
+    salaJuegoController.getByEstado
+);
 
 export { Router as salaJuegoRouter };
