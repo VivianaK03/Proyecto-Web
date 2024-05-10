@@ -1,6 +1,7 @@
 import { SalaJuego } from "../entity/salaJuegoEntity";
 import { AppDataSource } from "../data-source";
 import { FindManyOptions } from "typeorm";
+import { Palabra } from "../entity/palabraEntity";
 
 export class SalaJuegoRepository {
     private repository = AppDataSource.getRepository(SalaJuego);
@@ -29,4 +30,18 @@ export class SalaJuegoRepository {
         }
         return this.repository.find(options);
     }
+    async findPalabrasByCategoria(categoriaNombre: string): Promise<Palabra[]> {
+        const result = await this.repository.createQueryBuilder("salaJuego")
+            .innerJoin("salaJuego.categoria", "categoria")
+            .innerJoin("categoria.palabras", "palabra")
+            .where("categoria.nombre = :categoriaNombre", { categoriaNombre })
+            .select("palabra")
+            .getMany();
+            
+        // Extraer las palabras del resultado
+    const palabras: Palabra[] = result.flatMap(salaJuego => salaJuego.categoria.palabras);
+    
+    return palabras;
+    }
+
 }

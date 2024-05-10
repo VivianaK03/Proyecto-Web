@@ -31,7 +31,7 @@ export class CategoriaController {
         const body = req.body;
         try {
             const existingCategoria = await this.categoriaRepository.findByNombre(body.nombre);
-            if (existingCategoria) {
+            if (existingCategoria && existingCategoria.length>0) {
                 return res.status(400).json({ message: 'La categoría ya existe en la base de datos' });
             }
             

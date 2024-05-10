@@ -29,7 +29,7 @@ Router.delete(
     categoriaController.delete
 );
 Router.get(
-    '/categoria/:nombre', 
+    '/categoria/byNombre/:nombre', 
    categoriaController.getByName
    );
 

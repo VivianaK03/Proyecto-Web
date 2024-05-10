@@ -41,22 +41,24 @@ export class PalabraController {
     
     
 
-    public save = async (req: Request, res: Response) => {
+    public savePalabra = async (req: Request, res: Response) => {
         const body = req.body;
         try {
-            // Verifica si la palabra ya existe en la base de datos
             const existingPalabra = await this.palabraRepository.findByTexto(body.texto);
             if (existingPalabra) {
                 return res.status(400).json({ message: 'La palabra ya existe en la base de datos' });
             }
             
-            // Guardar la nueva palabra en la base de datos
-            const result: Palabra = await this.palabraRepository.save(body);
+            const nuevaPalabra = new Palabra();
+            nuevaPalabra.texto = body.texto;
+            
+            const result: Palabra = await this.palabraRepository.savePalabra(nuevaPalabra);
             return res.status(200).json(result);
         } catch (error) {
             res.status(400).json({ error: error.message });
         }
     }
+    
     
     
     
@@ -72,7 +74,7 @@ export class PalabraController {
             
             // Actualizar la palabra existente
             existingPalabra.texto = body.texto; // Actualiza el texto de la palabra
-            const result: Palabra = await this.palabraRepository.save(existingPalabra);
+            const result: Palabra = await this.palabraRepository.savePalabra(existingPalabra);
             return res.status(200).json(result);
         } catch (error) {
             res.status(400).json({ error: error.message });

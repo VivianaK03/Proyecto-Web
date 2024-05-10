@@ -39,9 +39,6 @@ export class SalaJuegoController {
             return res.status(400).json({ error: error.message });
         }
     };
-    
-    
-    
 
     public save = async (req: Request, res: Response) => {
         const body = req.body;
@@ -65,6 +62,16 @@ export class SalaJuegoController {
         } catch (error) {
             return res.status(400).json({ error: error.message });
         }
+    };
+
+    async getPalabrasByCategoria(req: Request, res: Response) {
+        try {
+            const { categoriaNombre } = req.params;
+            const palabras = await this.salaJuegoRepository.findPalabrasByCategoria(categoriaNombre);
+            res.status(200).json({ palabras });
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
     }
 
     nuevaRonda = async (req: Request, res: Response) => {
@@ -80,7 +87,11 @@ export class SalaJuegoController {
         } else {
             res.send("Ronda " + this.ronda + " finalizada. Aún no se alcanza el máximo de rondas.");
         }
-    }
+    };
+
+
+
+
 }
 
 export default SalaJuegoController;

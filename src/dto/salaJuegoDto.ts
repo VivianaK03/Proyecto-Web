@@ -5,4 +5,5 @@ export class SalaJuegoResponse {
     categoria: {
         nombre: string; // Solo el nombre de la categoría
     };
+    
 }

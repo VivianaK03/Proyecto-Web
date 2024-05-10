@@ -1,5 +1,6 @@
-import { Entity, Column, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, ManyToOne, PrimaryGeneratedColumn, ManyToMany, JoinTable } from "typeorm";
 import { Categoria } from "./categoriaEntity";
+import { Palabra } from "./palabraEntity";
 
 @Entity()
 export class SalaJuego {
@@ -14,4 +15,5 @@ export class SalaJuego {
 
     @ManyToOne(() => Categoria, categoria => categoria.salasJuego)
     categoria: Categoria;
+
 }

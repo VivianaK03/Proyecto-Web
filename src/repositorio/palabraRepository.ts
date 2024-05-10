@@ -16,9 +16,10 @@ export class PalabraRepository {
         return this.repository.findOne({ where: { id } });
     }
     
-    async save(palabra: Palabra){
+    async savePalabra(palabra: Palabra) {
         return this.repository.save(palabra);
     }
+    
    
     async delete(id: number){
         return this.repository.delete(id);

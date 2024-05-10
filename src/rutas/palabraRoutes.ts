@@ -12,7 +12,7 @@ Router.get(
 );
 
 Router.get(
-    "/palabra",
+    "/palabra/byTexto/:texto",
     palabraController.getByTexto
   );
 
@@ -23,7 +23,7 @@ Router.get(
 
   Router.post(
     "/guardarPalabra",
-    palabraController.save
+    palabraController.savePalabra
   );
 
   Router.put(

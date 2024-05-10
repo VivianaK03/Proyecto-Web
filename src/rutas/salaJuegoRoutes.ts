@@ -14,5 +14,6 @@ Router.get(
 );
 Router.get('/nuevaRonda', salaJuegoController.nuevaRonda);
 Router.get('/finDeRonda', salaJuegoController.finDeRonda);
+Router.get("/salasJuego/:categoriaNombre/palabras", salaJuegoController.getPalabrasByCategoria);
 
 export { Router as salaJuegoRouter };

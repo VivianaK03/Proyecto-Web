@@ -10,13 +10,12 @@ export class CategoriaRepository {
     async findByNombre(nombre: string) {
         return this.repository.find({ where: { nombre } });
     }
+    async save(categoria: Categoria) {
+        return this.repository.save(categoria);
+    }
 
     async findById(id: number) {
         return this.repository.findOne({ where: { id } });
-    }
-
-    async save(categoria: Categoria){
-        return this.repository.save(categoria);
     }
 
     async delete(id: number){
