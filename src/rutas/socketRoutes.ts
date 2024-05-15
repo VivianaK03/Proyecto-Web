@@ -24,7 +24,8 @@ module.exports = (expressWs) => {
                 rooms[roomName] = {
                     players: new Set(),
                     currentPlayer: null,
-                    word: ""
+                    word: "",
+                    roundsPlayed: 0
                 };
             }
             rooms[roomName].players.add({ ws, userName, avatar });
@@ -77,6 +78,9 @@ module.exports = (expressWs) => {
                             client.ws.send(`¡Felicidades! Adivinaste la palabra. Puntaje: ${score}`);
                             // Enviar mensaje a los demás jugadores
                             client.ws.send(`La palabra era: ${rooms[roomName].word} , el turno ha finalizado.`);
+                            client.score = client.score>=0? client.score : 0;
+                            client.score += score;
+                            console.log ("cliente", client);
                             // Asignar nueva palabra
                             selectWordRandow(roomName);
                             // Asignar el turno a la siguiente persona 
@@ -89,7 +93,32 @@ module.exports = (expressWs) => {
                         else {
                             client.ws.send(`El jugador ${userName} ha adivinado la palabra. Puntaje: ${score}`);
                             client.ws.send(`El TURNO HA FINALIZADO`);
+                            
+                            var playedAcum = rooms[roomName].roundsPlayed++;
+                            if (playedAcum === 4) {
+                                // Calcular puntaje total sumando los puntajes de todos los jugadores
+                                let totalScore = 0;
+                                rooms[roomName].players.forEach(client => {
+                                    totalScore += client.score || 0; // Si el puntaje no está definido, se considera como 0
+                                });
 
+                                // Crear mensaje de resultados
+                                let resultsMessage = 'RESULTADOS FINALES:\n';
+                                rooms[roomName].players.forEach(client => {
+                                    // Agregar el nombre del jugador y su puntaje al mensaje de resultados
+                                    client.ws.send(` ${client.userName}: Tus puntos totales fueron ${client.score || 0}\n`)
+                                    resultsMessage += `${client.userName}: ${client.score || 0}\n;`
+                                });
+
+                                // Enviar mensaje de resultados a cada jugador
+                                rooms[roomName].players.forEach(client => {
+                                    if (client.ws.readyState === ws.OPEN) {
+                                        client.ws.send(`Se han completado el maximo de Rondas.`);
+                                        client.ws.send(resultsMessage);
+                                        client.ws.close();
+                                    }
+                                });
+                            }
                             notifyPlayers(roomName)
                         }
                     }
