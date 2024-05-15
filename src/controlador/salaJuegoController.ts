@@ -7,7 +7,7 @@ import { SalaJuego } from "../entity/salaJuegoEntity";
 export class SalaJuegoController {
     private salaJuegoRepository: SalaJuegoRepository = new SalaJuegoRepository();
     private ronda: number = 0;
-    private maxRondas: number = 1; // Número máximo de rondas
+    private maxRondas: number = 5; // Número máximo de rondas
 
     public getById = async (req: Request, res: Response) => {
         const { id } = req.params;
